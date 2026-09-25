@@ -1,0 +1,12 @@
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+      - torch-cache:/root/.cache/torch
+    working_dir: /workspace
+
+volumes:
+  torch-cache:
